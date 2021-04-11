@@ -36,7 +36,7 @@ public LeaveRepository leaveRepo;
 	public Leave updateLeave(Leave leave,long id) {
 		
 		 Leave editLeave=new Leave();
-		 editLeave=leaveRepo.findById(leave.getId());
+		 editLeave=leaveRepo.findById(id);
 		System.out.println(leave.getName());
 		editLeave.setName(leave.getName());	
 		editLeave.setLeavetype(leave.getLeavetype());

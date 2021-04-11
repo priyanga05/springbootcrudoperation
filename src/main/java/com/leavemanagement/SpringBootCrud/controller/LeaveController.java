@@ -2,6 +2,7 @@ package com.leavemanagement.SpringBootCrud.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.leavemanagement.SpringBootCrud.service.LeaveService;
 
 @RestController
 @RequestMapping("/leavemanagement")
+@CrossOrigin(origins = "*")
 public class LeaveController {
    @Autowired
 	private LeaveService leaveService;
@@ -36,7 +38,7 @@ public class LeaveController {
  }
  
 @DeleteMapping("/deleteleave/{id}")
-public String deleteLeaveById(long id) {
+public String deleteLeaveById(@PathVariable long id) {
 	return leaveService.deleteLeaveById(id);
 }
 @PutMapping("/updateleave/{id}")
