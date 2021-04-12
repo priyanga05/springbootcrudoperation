@@ -31,13 +31,13 @@ public LeaveRepository leaveRepo;
 	}
 	public String deleteLeaveById(long id) {
 		    leaveRepo.deleteById(id);
-		  return "Leave Request deleted||"+id;
+		  return "Leave Request deleted"+id;
 	}
 	public Leave updateLeave(Leave leave,long id) {
 		
 		 Leave editLeave=new Leave();
 		 editLeave=leaveRepo.findById(id);
-		System.out.println(leave.getName());
+		//System.out.println(leave.getName());
 		editLeave.setName(leave.getName());	
 		editLeave.setLeavetype(leave.getLeavetype());
 		editLeave.setReason(leave.getReason());

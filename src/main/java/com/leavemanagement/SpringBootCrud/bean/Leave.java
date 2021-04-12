@@ -1,5 +1,6 @@
 package com.leavemanagement.SpringBootCrud.bean;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,8 +40,8 @@ public class Leave {
 	public void setId(long id) {
 		this.id = id;
 	}
-
-	public String getName() {
+	 @Column(name = "name", nullable = false)
+	public String getName(){
 		return name;
 	}
 
